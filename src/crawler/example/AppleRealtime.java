@@ -18,7 +18,7 @@ import com.google.common.collect.ImmutableSortedMap;
  * 	2. 使用Guava套件，強化許多難以實現的功能
  * 
  * 
- * @author Abola Lee
+ * @author Abola Lee。。
  *
  */
 public class AppleRealtime {
