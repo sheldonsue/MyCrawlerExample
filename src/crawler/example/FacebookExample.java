@@ -23,11 +23,11 @@ public class FacebookExample {
 		
 		// 遠端資料路徑
 		// [query sample]
-		// search?fields=name,id,likes,talking_about_count&limit=1000&q=靠北&type=page
+		// search?q=世大運&type=page&limit=1000&fields=name,id,likes,talking_about_count
 		String uri = 
 				"https://graph.facebook.com/v2.5"
-				+ "/search?q=%E9%9D%A0%E5%8C%97&type=page&limit=1000&fields=name,id,likes,talking_about_count"
-				+ "&access_token=EAACEdEose0cBAMzLyMlMxZAY73J1TBiZAHJhrF8du8fLhMmGYrUA3W9ezJDQk9oZAa07o4F2drZAL2k1cCtgdpl5LZClZCo6733A3xddNbjSAoTxEZBWY4rKnzLWTU3I0KMgT0qsw6eIRfdzg9RZCIkuTZCtGZCyzct657fywQpsFCNAZDZD";
+				+ "/search?q=%e4%b8%96%e5%a4%a7%e9%81%8b&type=page&limit=1000&fields=name,id,likes,talking_about_count"
+				+ "&access_token=EAACEdEose0cBAGd4HzAKfh5hS2JKjXijvhkIFSUKtVpMdIiEK24B8ENXfRVV9SUNyIXec5EclLzH1KbLPZAQZBx59hrZCHnVI6aZCrEZBgtr0uvKI3ALrZBzzL0jZBZCSyWOuOi1rEu5VMTJESwzX9cBwdmEpqEFhBlYqFIuXl4gVZBrd1JuufqPFi0DhZBbjRGYCBTzMBz0Q30wZDZD";
 
 
 
@@ -35,19 +35,42 @@ public class FacebookExample {
 //		[data sample]
 //		----
 //		{
-//			"data": [
-//			{
-//				"name": "靠北工程師",
-//					"id": "1632027893700148",
-//					"likes": 174587,
-//					"talking_about_count": 188119
-//			}
-//		}
+//		"data": [
+//		{
+//			"name": "Taipei 2017 Universiade - 世大運",
+//				"id": "157215971120682",
+//				"likes": 419693,
+//				"talking_about_count": 464907
+//		},
+//		{
+//			"name": "2017世界大學運動會 (世大運)",
+//				"id": "347690225327950",
+//				"likes": 4514,
+//				"talking_about_count": 702
+//		},
+//		{
+//			"name": "世大運",
+//				"id": "399198176891474",
+//				"likes": 95,
+//				"talking_about_count": 0
+//		},
+//		{
+//			"name": "Around Taiwan 世大運台旅通",
+//				"id": "307923779667068",
+//				"likes": 140,
+//				"talking_about_count": 27
+//		},
+//		{
+//			"name": "世大運項目",
+//				"id": "734096279996790",
+//				"likes": 119,
+//				"talking_about_count": 0
+//		},
 		Elements elems =
 				CrawlerPack.start()
 				.getFromJson(uri)
 				.select("data");
-		
+
 		String output = "id,名稱,按讚數,討論人數\n";
 		
 		// 遂筆處理
